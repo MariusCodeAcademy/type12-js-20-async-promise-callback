@@ -29,3 +29,5 @@ createPost({ title: 'Post Three', body: 'This is post Three body' }, getPosts);
 // getPosts();
 
 // isspresti su callback
+
+// promisify post js

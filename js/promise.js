@@ -17,4 +17,13 @@ console.log('pr1 ===', pr1);
 // pr1 === promise
 // resolve('OK') => .then(OK => )
 // reject('BAD'); => .catch(err => err)
-pr1.then((data) => console.log(data)).catch((err) => console.warn('something, went wrong', err));
+// pr1.then((data) => console.log(data)).catch((err) => console.warn('something, went wrong', err));
+pr1
+  .then((data) => {
+    console.log(data);
+    return data.toLowerCase();
+  })
+  .then((ka) => {
+    console.log('ka ===', ka);
+  })
+  .catch((err) => console.warn('something, went wrong', err));
