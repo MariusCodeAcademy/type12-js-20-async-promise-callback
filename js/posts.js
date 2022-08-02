@@ -29,10 +29,12 @@ function createPost(newPost) {
 }
 
 // createPost({ title: 'Post Three', body: 'This is post Three body' }, getPosts);
-createPost({ title: 'Post Three', body: 'This is post Three body' })
-  .then(() => getPosts())
-  .then(() => createPost({ title: 'Post Four', body: 'This is post Four body' }))
-  .then(getPosts);
+// createPost({ title: 'Post Three', body: 'This is post Three body' })
+//   .then(() => getPosts())
+//   .then(() => createPost({ title: 'Post Four', body: 'This is post Four body' }))
+//   .then(getPosts);
 
 // createPost({ title: 'Post Four', body: 'This is post Four body' }).then(() => getPosts());
 // getPosts();
+
+// padaryti su async ir await
