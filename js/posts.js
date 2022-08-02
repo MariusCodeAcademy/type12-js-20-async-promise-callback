@@ -38,3 +38,18 @@ function createPost(newPost) {
 // getPosts();
 
 // padaryti su async ir await
+
+const flow = async () => {
+  await createPost({ title: 'Post Three', body: 'This is post Three body' });
+  await createPost({ title: 'Post Four', body: 'This is post Four body' });
+  getPosts();
+};
+// flow();
+
+// iffe
+// (()=>{})()
+(async () => {
+  await createPost({ title: 'Post Three', body: 'This is post Three body' });
+  await createPost({ title: 'Post Four', body: 'This is post Four body' });
+  getPosts();
+})();

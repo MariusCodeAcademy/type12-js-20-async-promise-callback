@@ -5,4 +5,9 @@ function tick() {
   const time = now.toLocaleTimeString('lt', { timeStyle: 'medium' });
   timeEl.textContent = time;
 }
-momentInTime();
+tick();
+
+const int1 = setInterval(tick, 1000);
+
+// setTimeout(clearInterval, 5000, int1);
+// clearInterval(int1);
