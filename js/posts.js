@@ -7,6 +7,7 @@ const posts = [
 const postsEl = document.getElementById('posts');
 
 function getPosts() {
+  postsEl.innerHTML = '';
   setTimeout(() => {
     // sugeneruoti ir patalpinti li elemnentus is posts
     posts.forEach((post) => {
@@ -17,17 +18,21 @@ function getPosts() {
   }, 1000);
 }
 
-function createPost(newPost, callBack) {
-  setTimeout(() => {
-    posts.push(newPost);
-    callBack();
-  }, 2000);
+// promisify post js
+function createPost(newPost) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      posts.push(newPost);
+      resolve();
+    }, 2000);
+  });
 }
 
-createPost({ title: 'Post Three', body: 'This is post Three body' }, getPosts);
+// createPost({ title: 'Post Three', body: 'This is post Three body' }, getPosts);
+createPost({ title: 'Post Three', body: 'This is post Three body' })
+  .then(() => getPosts())
+  .then(() => createPost({ title: 'Post Four', body: 'This is post Four body' }))
+  .then(getPosts);
 
+// createPost({ title: 'Post Four', body: 'This is post Four body' }).then(() => getPosts());
 // getPosts();
-
-// isspresti su callback
-
-// promisify post js

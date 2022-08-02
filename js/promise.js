@@ -25,5 +25,10 @@ pr1
   })
   .then((ka) => {
     console.log('ka ===', ka);
+    return ka + ' kazka';
+  })
+  .then((ka) => {
+    // throw new Error('mistake haaapened');
+    console.log('ka ===', ka);
   })
   .catch((err) => console.warn('something, went wrong', err));
